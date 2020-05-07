@@ -22,6 +22,11 @@ correct dependencies.
     DB_USERNAME=root
     DB_PASSWORD=root
     ```
-3. Run `php artisan key:generate` to generate an app key
-4. Run `php artisan migrate` to migrate the database
-5. If you don't already have a local server running, run `php artisan serve` and access your site locally at http://localhost:8000/
+3. Also make sure that the following are set to use the KLAVIYO_SYNC feature
+    ```
+   KLAVIYO_SYNC_ENABLED=true
+   KLAVIYO_API_TOKEN=[your_api_token_goes_here]
+    ```
+4. Run `php artisan key:generate` to generate an app key
+5. Run `php artisan migrate` to migrate the database
+6. If you don't already have a local server running, run `php artisan serve` and access your site locally at http://localhost:8000/
