@@ -11,9 +11,7 @@ correct dependencies.
 1. Clone `git@github.com:khoa002/saas-contact-manager.git`
 2. Compile the project with:
     * `composer install`
-    * `npm install`
-    * `npm run dev`
-2. Copy `.env.example` to your local `.env` and modify the db connection credentials to match your local (the database needs to be created manually)
+3. Copy `.env.example` to your local `.env` and modify the db connection credentials to match your local (the database needs to be created manually)
     ```
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -22,7 +20,7 @@ correct dependencies.
     DB_USERNAME=root
     DB_PASSWORD=root
     ```
-3. Also make sure that the following are set to use the KLAVIYO_SYNC feature
+4. Also make sure that the following are set to use the KLAVIYO_SYNC feature
     ```
    KLAVIYO_SYNC_ENABLED=true
    KLAVIYO_API_ENDPOINT=https://a.klaviyo.com
@@ -30,6 +28,7 @@ correct dependencies.
    KLAVIYO_PUBLIC_KEY=[your_public_key_goes_here]
    KLAVIYO_API_TOKEN=[your_api_token_goes_here]
     ```
-4. Run `php artisan key:generate` to generate an app key
-5. Run `php artisan migrate` to migrate the database
-6. If you don't already have a local server running, run `php artisan serve` and access your site locally at http://localhost:8000/
+5. Run `php artisan key:generate` to generate an app key
+6. Run `php artisan migrate` to migrate the database
+7. If you don't already have a local server running, run `php artisan serve` and access your site locally at http://localhost:8000/
+8. You are now free explore the app.

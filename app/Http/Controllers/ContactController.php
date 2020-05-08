@@ -247,7 +247,7 @@ class ContactController extends Controller
             } catch (ClientException $e) {
                 $code = $e->getCode();
                 $msg = json_decode($e->getResponse()->getBody()->getContents());
-                $errorMsg = ['Contact updated successfully, but could not be synced with Klaviyo.'];
+                $errorMsg = ['Contact is saved, but could not be synced with Klaviyo.'];
                 if (isset($msg->detail)) {
                     $errorMsg[] = $msg->detail;
                 }
