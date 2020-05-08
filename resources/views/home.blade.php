@@ -111,5 +111,50 @@
                 </div>
             </div>
         </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Import contacts</div>
+
+                    <div class="card-body">
+
+                        @if (session()->has('importErrors'))
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach (session()->get('importErrors') as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        @if (session()->has('importSuccessMsg'))
+                            <div class="alert alert-success">
+                                {{ session()->get('importSuccessMsg') }}
+                            </div>
+                        @endif
+
+                        <form class="form" role="form" id="import-csv" method="post"
+                              action="{{ route('importCsv') }}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <input type="hidden" id="user_id" name="user_id" value="{{ $user->id }}"/>
+                            <div class="row form-group">
+                                <label class="col-md-4 control-label" for="csvfile">CSV File</label>
+                                <div class="col-md-6">
+                                    <input id="csvfile" type="file" class="form-control form-control-sm" name="csvfile" required>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-outline-primary">Import</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
