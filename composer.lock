@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0dcbdc80776ca79d6311b8f92c5a4b5",
+    "content-hash": "efacfc2e62918f0503b699b47031fbb7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -700,6 +700,51 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "klaviyo/php-sdk",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/klaviyo/php-klaviyo.git",
+                "reference": "824e82463d92ad4a06719a35810edcdaa7c5eec1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/klaviyo/php-klaviyo/zipball/824e82463d92ad4a06719a35810edcdaa7c5eec1",
+                "reference": "824e82463d92ad4a06719a35810edcdaa7c5eec1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Klaviyo",
+                    "homepage": "https://github.com/klaviyo"
+                }
+            ],
+            "description": "Klaviyo PHP SDK",
+            "homepage": "http://github.com/klaviyo",
+            "keywords": [
+                "klaviyo",
+                "sdk"
+            ],
+            "support": {
+                "source": "https://github.com/klaviyo/php-klaviyo/tree/1.0.0",
+                "issues": "https://github.com/klaviyo/php-klaviyo/issues"
+            },
+            "time": "2018-08-02T13:45:16+00:00"
         },
         {
             "name": "laravel/framework",
