@@ -135,6 +135,8 @@ class ContactController extends Controller
 
     public function parseImport(CsvImportRequest $request)
     {
+        // For this project, we only care about the following columns
+        // The import will ignore the rest, if any
         $requiredHeaders = ['email', 'first_name', 'phone'];
         $path = $request->file('csvfile')->getRealPath();
         $data = array_map('str_getcsv', file($path));
@@ -208,7 +210,7 @@ class ContactController extends Controller
     /**
      * Method to sync with Klaviyo
      * @param Contact $contact
-     * @return bool
+     * @return array
      */
     public function syncWithKlaviyo(Contact $contact): array
     {
