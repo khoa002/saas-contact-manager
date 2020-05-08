@@ -253,9 +253,9 @@ class ContactController extends Controller
                 }
                 return ['success' => false, 'message' => $errorMsg];
             }
-        } else {
-            return ['success' => false, 'message' => ['Contact is saved, but Klaviyo syncing is not enabled or the API token is missing.']];
         }
+
+        return ['success' => false, 'message' => ['Contact is saved, but Klaviyo syncing is disabled or the API token is missing.']];
     }
 
     /**

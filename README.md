@@ -32,3 +32,4 @@ correct dependencies.
 6. Run `php artisan migrate` to migrate the database
 7. If you don't already have a local server running, run `php artisan serve` and access your site locally at http://localhost:8000/
 8. You are now free explore the app.
+9. Sample CSV files are included in `storage/samples` of this repository.
