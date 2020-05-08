@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 /**
  * Class User
@@ -51,6 +52,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+        // Automatically generate a new UUID on model creation
+        self::creating(function ($model) {
+            $model->uuid = (string)Str::uuid();
+        });
+    }
 
     /**
      * @return HasMany

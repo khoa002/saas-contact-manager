@@ -27,6 +27,7 @@ correct dependencies.
    KLAVIYO_SYNC_ENABLED=true
    KLAVIYO_API_ENDPOINT=https://a.klaviyo.com
    KLAVIYO_DEFAULT_CONTACTS_LIST_NAME=Contacts
+   KLAVIYO_PUBLIC_KEY=[your_public_key_goes_here]
    KLAVIYO_API_TOKEN=[your_api_token_goes_here]
     ```
 4. Run `php artisan key:generate` to generate an app key

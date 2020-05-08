@@ -207,18 +207,20 @@ class ContactController extends Controller
      */
     private function _getDefaultContactsListId(Client $client): string
     {
+        $user = Auth::user();
+        $listName = env('KLAVIYO_DEFAULT_CONTACTS_LIST_NAME', 'Contacts') . " ({$user->uuid})";
         // Find the default contact list in Klaviyo by name
         $res = $client->get('/api/v2/lists', ['query' => ['api_key' => env('KLAVIYO_API_TOKEN')]]);
         $lists = collect(json_decode($res->getBody()->getContents()));
-        $contactsList = $lists->first(function ($item) {
+        $contactsList = $lists->first(function ($item) use ($listName) {
             // if it's found, return it
-            return $item->list_name == env('KLAVIYO_DEFAULT_CONTACTS_LIST_NAME', 'Contacts');
+            return $item->list_name == $listName;
         });
         if (!$contactsList) {
             // We don't have a default contact list yet, let's make one
             $res = $client->post('/api/v2/lists', ['form_params' => [
                 'api_key'   => env('KLAVIYO_API_TOKEN'),
-                'list_name' => env('KLAVIYO_DEFAULT_CONTACTS_LIST_NAME', 'Contacts'),
+                'list_name' => $listName,
             ]]);
             $result = json_decode($res->getBody()->getContents());
             if (isset($result->list_id)) {

@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/user/trackClick/', 'HomeController@trackClick');
+Route::get('/{any}', 'HomeController@index')->name('home');
 Route::resource('contacts', 'ContactController')->only(['store', 'edit', 'update']);

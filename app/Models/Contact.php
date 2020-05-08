@@ -29,7 +29,7 @@ class Contact extends Model
         parent::boot();
         // Automatically generate a new UUID on model creation
         self::creating(function ($model) {
-            $model->uuid = (string) Str::uuid();
+            $model->uuid = (string)Str::uuid();
         });
     }
 
