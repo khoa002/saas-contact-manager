@@ -13,7 +13,7 @@ correct dependencies.
     * `composer install`
     * `npm install`
     * `npm run dev`
-2. Copy `.env.example` to your local `.env` and modify the db connection credentials to match your local
+2. Copy `.env.example` to your local `.env` and modify the db connection credentials to match your local (the database needs to be created manually)
     ```
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
