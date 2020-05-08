@@ -16,6 +16,7 @@ class AddContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->comment('Used for external services');
+            $table->string('klaviyo_id', 100)->nullable()->comment('Used specifically for Klaviyo');
             $table->unsignedInteger('user_id')->references('id')->on('users');
             $table->string('first_name', 100)->nullable();
             $table->string('email', 100)->nullable();

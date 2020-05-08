@@ -11,6 +11,8 @@ use Illuminate\Support\Str;
  * Class Contact
  * @package App\Models
  * @property int $id
+ * @property string $uuid
+ * @property string $klaviyo_id
  * @property int $user_id
  * @property string $first_name
  * @property string $email

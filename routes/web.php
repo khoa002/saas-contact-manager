@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::resource('contacts', 'ContactController')->only('store');
+Route::resource('contacts', 'ContactController')->only(['store', 'edit', 'update']);
